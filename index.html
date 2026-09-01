@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micco Angelo Arcega — Nursing · Care · Passion · Precise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#e8e6e2;
+    --panel:#f2f0ec;
+    --ink:#2a231d;
+    --gray-brown:#847044;
+    --orange:#e35905;
+    --vivid-brown:#b0310b;
+    --dark-red:#541813;
+    --dark-gray-brown:#443728;
+    --rule: rgba(42,35,29,0.18);
+    --serif: 'Playfair Display', Georgia, serif;
+    --body: Arial, Helvetica, sans-serif;
+    --accent-font: 'Open Sans', Arial, sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.55;
+  }
+  img{max-width:100%;display:block;}
+
+  .wrap{
+    max-width:960px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:sticky; top:0; z-index:20;
+    background:rgba(232,230,226,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--rule);
+  }
+  .nav-inner{
+    max-width:960px;margin:0 auto;padding:18px 32px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .nav-mark{
+    font-family:var(--serif);font-style:italic;font-weight:600;
+    font-size:1.25rem;color:var(--dark-gray-brown);text-decoration:none;
+  }
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;}
+  .nav-links a{
+    color:var(--dark-gray-brown);text-decoration:none;font-size:0.92rem;
+    border-bottom:1px solid transparent;
+  }
+  .nav-links a:hover{border-bottom-color:var(--orange);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:96px 0 64px;
+    position:relative;
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:40px;
+    align-items:center;
+  }
+  .hero-mark img{
+    width:100%;
+    max-width:420px;
+    opacity:0.94;
+  }
+  .hero-name{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(2.4rem, 5vw, 3.4rem);
+    line-height:1.06;
+    margin:0 0 14px;
+    color:var(--ink);
+  }
+  .hero-tagline{
+    font-family:var(--accent-font);
+    font-size:0.95rem;
+    letter-spacing:0.06em;
+    color:var(--dark-red);
+    margin:0 0 20px;
+    font-weight:600;
+  }
+  .hero-desc{
+    max-width:46ch;
+    font-size:1.05rem;
+    color:var(--dark-gray-brown);
+    margin:0 0 28px;
+  }
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:11px 22px;
+    font-family:var(--accent-font);
+    font-size:0.9rem;
+    font-weight:600;
+    text-decoration:none;
+    border:1px solid var(--dark-gray-brown);
+    color:var(--ink);
+    border-radius:2px;
+  }
+  .btn.primary{background:var(--orange);border-color:var(--orange);color:#fdf9f2;}
+  .btn.primary:hover{background:var(--vivid-brown);border-color:var(--vivid-brown);}
+  .btn.ghost:hover{background:var(--dark-gray-brown);color:#fdf9f2;}
+
+  hr.rule{border:none;border-top:1px solid var(--rule);margin:0;}
+
+  /* ---------- SECTION ---------- */
+  section{padding:64px 0;}
+  section + section{border-top:1px solid var(--rule);}
+  .section-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    margin-bottom:36px;flex-wrap:wrap;gap:8px;
+  }
+  .section-head h2{
+    font-family:var(--serif);font-weight:600;font-style:italic;
+    font-size:1.7rem;margin:0;color:var(--ink);
+  }
+  .section-head span{
+    font-family:var(--accent-font);font-size:0.85rem;color:var(--gray-brown);
+  }
+
+  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;}
+  .about-grid p{color:var(--dark-gray-brown);margin:0 0 16px;}
+  .values{list-style:none;margin:0;padding:0;}
+  .values li{
+    padding:12px 0;border-top:1px solid var(--rule);
+    display:flex;justify-content:space-between;font-family:var(--accent-font);font-size:0.92rem;
+  }
+  .values li:last-child{border-bottom:1px solid var(--rule);}
+  .values b{color:var(--dark-red);font-weight:600;}
+
+  /* ---------- WORKS ---------- */
+  .work-card{
+    display:grid;grid-template-columns:0.9fr 1.1fr;gap:36px;
+    padding:32px 0;border-top:1px solid var(--rule);
+    align-items:start;
+  }
+  .work-card:first-of-type{border-top:none;padding-top:0;}
+  .work-thumb{
+    border:1px solid var(--rule);
+    overflow:hidden;background:#fff;
+  }
+  .work-thumb img{width:100%;height:auto;display:block;}
+  .work-tag{
+    font-family:var(--accent-font);font-size:0.78rem;font-weight:600;
+    color:var(--orange);margin:0 0 8px;
+  }
+  .work-card h3{
+    font-family:var(--serif);font-size:1.35rem;margin:0 0 10px;color:var(--ink);
+  }
+  .work-card p{color:var(--dark-gray-brown);margin:0 0 10px;font-size:0.97rem;}
+  .work-why{
+    border-left:2px solid var(--gray-brown);
+    padding-left:14px;margin-top:14px;
+    font-size:0.93rem;color:var(--dark-gray-brown);
+  }
+  .work-why b{color:var(--dark-gray-brown);font-family:var(--accent-font);font-size:0.8rem;display:block;margin-bottom:4px;letter-spacing:0.02em;}
+
+  /* ---------- BRAND ---------- */
+  .swatch-bar{display:flex;width:100%;height:64px;border:1px solid var(--rule);margin-bottom:28px;}
+  .swatch{display:flex;align-items:flex-end;justify-content:flex-start;padding:8px 10px;}
+  .swatch span{
+    font-family:var(--accent-font);color:#fdf9f2;font-size:0.72rem;font-weight:600;
+    text-shadow:0 1px 2px rgba(0,0,0,0.25);
+  }
+  .type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:28px;}
+  .type-card{border:1px solid var(--rule);padding:22px;background:var(--panel);}
+  .type-card b{
+    display:block;font-family:var(--accent-font);font-size:0.75rem;
+    color:var(--gray-brown);margin-bottom:10px;letter-spacing:0.03em;
+  }
+  .type-card .sample{font-size:2rem;color:var(--ink);}
+  .type-card .fname{font-family:var(--accent-font);font-size:0.82rem;color:var(--dark-gray-brown);margin-top:6px;}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:600px;}
+  .contact-item{
+    border:1px solid var(--rule);padding:16px 18px;background:var(--panel);
+    font-family:var(--accent-font);font-size:0.9rem;
+  }
+  .contact-item span{display:block;font-size:0.72rem;color:var(--gray-brown);margin-bottom:4px;}
+  .contact-item a{color:var(--ink);text-decoration:none;}
+  .contact-item a:hover{color:var(--orange);}
+
+  footer{
+    padding:36px 0 60px;
+    font-family:var(--accent-font);font-size:0.82rem;color:var(--gray-brown);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  }
+
+  @media (max-width: 720px){
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-mark{order:-1;max-width:220px;margin:0 auto 8px;}
+    .about-grid{grid-template-columns:1fr;}
+    .work-card{grid-template-columns:1fr;}
+    .type-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .nav-links{gap:16px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="#top">M / A</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#brand">Brand</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<div id="top" class="wrap hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-tagline">Nursing · Care · Passion · Precise</p>
+      <h1 class="hero-name">Micco Angelo<br>Arcega</h1>
+      <p class="hero-desc">Nursing student at Ateneo de Davao University School of Nursing. This is a running record of the design and academic work I make alongside my coursework — built around a small visual identity I designed for myself.</p>
+      <div class="hero-cta">
+        <a class="btn primary" href="#works">See the work</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-mark">
+      <img src="assets/logo_transparent.png" alt="M A monogram, personal logo of Micco Angelo Arcega">
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <h2 style="font-family:var(--serif);font-style:italic;font-size:1.7rem;margin-top:0;">About</h2>
+      <p>I'm a Nursing student at Ateneo de Davao University, and outside of clinical coursework I put together visual and communication projects — infographics, event materials, and this small personal brand.</p>
+      <p>My tagline, <em>Nursing – Care – Passion – Precise</em>, is the short version of how I try to work: attentive to people, genuinely invested, and exact about the details — a habit that carries over from the ward to the page.</p>
+      <p>The monogram on this site is my personal logo: an M and A built from two intersecting strokes, meant to read as steady and a little hand-drawn rather than corporate.</p>
+    </div>
+    <div>
+      <ul class="values">
+        <li><span>Program</span> <b>BS Nursing</b></li>
+        <li><span>School</span> <b>Ateneo de Davao University</b></li>
+        <li><span>Unit</span> <b>School of Nursing</b></li>
+        <li><span>Based in</span> <b>Davao, Philippines</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Selected work</h2>
+      <span>Class projects &amp; design work</span>
+    </div>
+
+    <div class="work-card">
+      <div class="work-thumb"><img src="assets/ACTIVITY_1-GE_4120_ARCEGA.png" alt="Free coffee event poster for Arrupe Hall Booth 7"></div>
+      <div>
+        <p class="work-tag">Activity 1 · Event Poster, GE 4120</p>
+        <h3>Free Coffee — Arrupe Hall, Booth 7</h3>
+        <p>A poster for a free-coffee giveaway booth, designed to be readable from a distance across a hallway and to feel warm rather than corporate.</p>
+        <div class="work-why">
+          <b>Why I made this</b>
+          This was my first activity for GE 4120, so the brief was simple: get people to stop at the booth. I leaned into the coffee-splash imagery and a friendly mascot because a giveaway table should feel inviting, not like an ad.
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <div class="work-thumb"><img src="assets/colortypography_cropped.png" alt="Personal brand color palette, typography, and mood board"></div>
+      <div>
+        <p class="work-tag">Activity 2 · Brand Guide, GE 4120</p>
+        <h3>Personal Brand: Color, Type &amp; Mood</h3>
+        <p>The palette, fonts, and mood board behind my personal brand — the same system used across this site.</p>
+        <div class="work-why">
+          <b>Why I made this</b>
+          Before I could design anything else, I needed a consistent visual language. I chose warm browns and a single orange accent because they read as grounded and human rather than clinical-white, which felt more honest to what nursing actually looks like day to day.
+        </div>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <div class="work-thumb"><img src="assets/Infographic_ARCEGA.png" alt="Infographic on the effects of procrastination on academic performance"></div>
+      <div>
+        <p class="work-tag">Activity 3 · Infographic, GE 4120</p>
+        <h3>Effects of Procrastination on Academic Performance</h3>
+        <p>An infographic breaking down why students procrastinate, the short- and long-term effects, and six concrete steps to work against it — from starting small to setting realistic deadlines.</p>
+        <div class="work-why">
+          <b>Why I made this</b>
+          Procrastination is something I see constantly in myself and my classmates, especially with clinical requirements stacked on top of lecture work. I wanted a reference that was honest about the short-term relief it gives, not just the long-term cost, since that's the actual reason it's hard to stop.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="brand">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Brand system</h2>
+      <span>What this site is built from</span>
+    </div>
+
+    <div class="swatch-bar">
+      <div class="swatch" style="background:#847044;width:30%;"><span>Gray Brown · 30%</span></div>
+      <div class="swatch" style="background:#e35905;width:30%;"><span>Orange · 30%</span></div>
+      <div class="swatch" style="background:#b0310b;width:20%;"><span>Vivid Brown · 20%</span></div>
+      <div class="swatch" style="background:#541813;width:17%;"><span>Dark Red · 17%</span></div>
+      <div class="swatch" style="background:#443728;width:13%;"><span>DGB · 13%</span></div>
+    </div>
+
+    <div class="type-grid">
+      <div class="type-card">
+        <b>Display</b>
+        <div class="sample" style="font-family:var(--serif);font-style:italic;">Aa</div>
+        <div class="fname">Hello Paris</div>
+      </div>
+      <div class="type-card">
+        <b>Body</b>
+        <div class="sample" style="font-family:Arial, sans-serif;">Aa</div>
+        <div class="fname">Arial</div>
+      </div>
+      <div class="type-card">
+        <b>Accent</b>
+        <div class="sample" style="font-family:var(--accent-font);">Aa</div>
+        <div class="fname">Open Sans</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Contact</h2>
+      <span>Let's talk</span>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-item"><span>Email</span><a href="mailto:mcarcega@addu.edu.ph">mcarcega@addu.edu.ph</a></div>
+      <div class="contact-item"><span>Phone</span><a href="tel:+639052611891">+63 905 261 1891</a></div>
+      <div class="contact-item"><span>LinkedIn</span><a href="https://linkedin.com/in/mcarcega" target="_blank" rel="noopener">linkedin.com/in/mcarcega</a></div>
+      <div class="contact-item"><span>Location</span><span style="color:var(--ink);">Philippines</span></div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>Micco Angelo Arcega — Nursing · Care · Passion · Precise</span>
+  <span>Built with a personal identity system: Gray Brown, Orange, Vivid Brown, Dark Red, Dark Gray Brown</span>
+</footer>
+
+</body>
+</html>
