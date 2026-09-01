@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/logo_transparent.png" width="220" alt="logo_transparent.png">
+<img src="assets/logo_transparent.png" width="220" alt="">
 
 # Micco Angelo Arcega
 ### Nursing · Care · Passion · Precise
