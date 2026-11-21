@@ -1,5 +1,4 @@
 
-
 <div align="center">
 
   <img src="images/profile.png" alt="Micco Angelo C. Arcega" width="180" style="border-radius: 50%;" />
